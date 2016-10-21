@@ -65,8 +65,8 @@ clean-all: clean
 .PHONY: less
 less: prepare-build
 	@echo $(call HELPTEXT,$@)
-	lessc $(LESS_OPTIONS) $(LESS) build/css/style.css
-	lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
+	$(NPMBIN)/lessc $(LESS_OPTIONS) $(LESS) build/css/style.css
+	$(NPMBIN)/lessc --clean-css $(LESS_OPTIONS) $(LESS) build/css/style.min.css
 	cp build/css/style*.css htdocs/css/
 
 
@@ -84,8 +84,8 @@ less-install: less
 .PHONY: less-lint
 less-lint: less
 	@echo $(call HELPTEXT,$@)
-	lessc --lint $(LESS_OPTIONS) $(LESS) > build/lint/style.less
-	- csslint $(CSSLINT_OPTIONS) build/css/style.css > build/lint/style.css
+	$(NPMBIN)/lessc --lint $(LESS_OPTIONS) $(LESS) > build/lint/style.less
+	- $(NPMBIN)/csslint $(CSSLINT_OPTIONS) build/css/style.css > build/lint/style.css
 	ls -l build/lint/
 
 
@@ -122,3 +122,28 @@ npm-version:
 	@echo $(call HELPTEXT,$@)
 	$(NPMBIN)/lessc --version
 	$(NPMBIN)/csslint --version
+
+
+
+# target: upgrade-normalize		- Upgrade LESS module - Normalize.
+.PHONY: upgrade-normalize
+upgrade-normalize:
+	@echo $(call HELPTEXT,$@)
+	
+	# Normalizer
+	wget --quiet https://necolas.github.io/normalize.css/latest/normalize.css -O $(LESS_MODULES)/normalize.less
+
+# target: upgrade-responsive menu	- Upgrade responsive menu
+.PHONY: upgrade-responsive-menu
+upgrade-responsive-menu:
+	@echo $(call HELPTEXT,$@)
+	
+	# Responsive menu
+	wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/src/less/responsive-menu.less -O $(LESS_MODULES)/responsive-menu.less
+	wget --quiet https://raw.githubusercontent.com/mosbth/responsive-menu/master/src/js/responsive-menu.js -O js/responsive-menu.js
+
+# target: upgrade                 - Upgrade external LESS modules.
+.PHONY: upgrade
+upgrade: upgrade-normalize upgrade-responsive-menu
+	@echo $(call HELPTEXT,$@)
+
