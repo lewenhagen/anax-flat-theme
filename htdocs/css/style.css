@@ -1,7 +1,7 @@
-/** 
+/**
 * Anax Flat theme.
 */
-/** 
+/**
  * Base theme including all modules needed.
  *
  * Each module is within its own
@@ -571,7 +571,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
  * Menu layout for the desktop variant, usually full width of browser.
  */
 .rm-desktop ul {
-  background-color: inherit;
+  background-color: #000;
 }
 .rm-desktop li {
   position: relative;
@@ -582,7 +582,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
 }
 .rm-desktop li a {
   color: inherit;
-  background-color: inherit;
+  background-color: #000;
 }
 .rm-desktop li a:hover {
   color: inherit;
@@ -642,7 +642,7 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   display: block;
 }
 .rm-max .rm-small .rm-button {
-  font-size: inherit;
+  font-size: 2em;
   color: inherit;
 }
 .rm-max .rm-small .rm-button.rm-clicked {
@@ -709,13 +709,96 @@ a.rm-button.rm-clicked .rm-button-face-2 {
   right: 0;
 }
 /** --------------------------------------------------------------
+ *  Responsive design
+ */
+img {
+  max-width: 100%;
+}
+@media screen and (max-width: 900px) {
+  .site-logo-text {
+    width: 40%;
+  }
+  .navbar2 {
+    width: 50%;
+  }
+  .wrap-all {
+    background-color: #ddd;
+  }
+  .profile {
+    width: 10%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .sidebar {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .footer-column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 560px) {
+  .site-logo-text {
+    width: 90%;
+  }
+  .navbar2 {
+    display: none;
+  }
+}
+/**
+* Colors
+*/
+/** --------------------------------------------------------------
  *  Logo images
  */
 .logo-1 {
-  position: absolute;
-  top: 70px;
-  left: -140px;
+  display: none;
 }
-.site-logo-text-icon img {
-  vertical-align: bottom;
+.site-logo-text-icon {
+  display: none;
+}
+/** --------------------------------------------------------------
+ *  Header
+ */
+.rm-max .rm-small .rm-button {
+  font-size: 2em;
+}
+.rm-desktop li {
+  background-color: #FFA500;
+}
+.site-logo-text,
+.navbar2,
+.profile {
+  float: left;
+  width: 30%;
+}
+.site-header {
+  height: 80px;
+}
+.site-logo-text {
+  font-size: 2em;
+}
+.site-logo-text a {
+  text-decoration: none;
+}
+/** --------------------------------------------------------------
+ * Divs and containers
+ */
+body {
+  background-color: #3c3e3e;
+  color: white;
+}
+/** --------------------------------------------------------------
+* Links and text
+*/
+a {
+  color: #FFA500;
+  font-size: 16px;
+}
+/** --------------------------------------------------------------
+ * Lists
+ */
+ul {
+  list-style-type: none;
 }

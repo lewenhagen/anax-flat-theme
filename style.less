@@ -1,21 +1,95 @@
-/** 
+/**
 * Anax Flat theme.
 */
 @import url(modules.less);
 
-
+/**
+* Colors
+*/
+@black: #000000;
+@orange: #FFA500;
+@grayish: #3c3e3e;
 
 /** --------------------------------------------------------------
  *  Logo images
  */
 .logo-1 {
-    position: absolute;
-    top: 70px;
-    left: -140px;
+    display: none;
+    // position: absolute;
+    // top: 170px;
+    // left: -140px;
 }
 
 .site-logo-text-icon {
-    img {
-        vertical-align: bottom;
+    display: none;
+    // img {
+    //     vertical-align: bottom;
+    // }
+}
+
+/** --------------------------------------------------------------
+ *  Header
+ */
+
+// Size of max navbar button
+.rm-max .rm-small .rm-button {
+    font-size: 2em;
+}
+
+@maxButtonFontSize: 2em;
+
+// Style navbar
+.rm-desktop li {
+    background-color: @orange;
+}
+
+@navbarItemBgColor: #000;
+
+
+// Size each item in the header
+.site-logo-text,
+.navbar2,
+.profile {
+    float: left;
+    width: 30%;
+}
+
+.site-header {
+    height: 80px;
+}
+
+// Site title
+.site-logo-text {
+    font-size: 2em;
+
+    a {
+        text-decoration: none;
     }
+}
+
+/** --------------------------------------------------------------
+ * Divs and containers
+ */
+body {
+    background-color: @grayish;
+    color: white;
+}
+
+
+/** --------------------------------------------------------------
+* Links and text
+*/
+a {
+    color: @orange;
+    font-size: 16px;
+}
+
+
+/** --------------------------------------------------------------
+ * Lists
+ */
+
+ul {
+list-style-type: none;
+
 }
