@@ -1,0 +1,23 @@
+/**
+* Anax Flat theme.
+*/
+@import url(modules.less);
+
+/**
+ * Show grid.
+ */
+.showGrid(@maxWidth: 1100px) {
+    background: url(../img/grid960x24x30x10.png) repeat-y fixed center center;
+    background-size: 100% auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: @maxWidth;
+
+    @media (min-width: @maxWidth) {
+        background-size: @maxWidth auto;
+    }
+}
+
+.route-grid {
+    .showGrid(960px);
+}

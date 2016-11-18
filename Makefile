@@ -147,3 +147,9 @@ upgrade-responsive-menu:
 upgrade: upgrade-normalize upgrade-responsive-menu
 	@echo $(call HELPTEXT,$@)
 
+# target: update-grid              - Upgrade external LESS grid.
+.PHONY: upgrade-grid
+upgrade-grid:
+	@echo $(call HELPTEXT,$@)
+	wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/grid/fluid/less/grid-flex.less -O $(LESS_MODULES)/grid-flex.less
+	wget --quiet https://raw.githubusercontent.com/dbwebb-se/design/master/example/grid/fluid/less/grid-float.less -O $(LESS_MODULES)/grid-float.less

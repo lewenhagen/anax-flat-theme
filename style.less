@@ -3,6 +3,7 @@
 */
 @import url(modules.less);
 
+
 /**
 * Colors
 */
@@ -40,10 +41,12 @@
 
 // Style navbar
 .rm-desktop li {
-    background-color: @orange;
+    background-color: @grayish;
+    box-shadow: 10px 10px 5px #888888;
+    color: white;
 }
 
-@navbarItemBgColor: #000;
+// @navbarItemBgColor: #000;
 
 
 // Size each item in the header
@@ -51,7 +54,7 @@
 .navbar2,
 .profile {
     float: left;
-    width: 30%;
+    // width: 30%;
 }
 
 .site-header {
@@ -61,7 +64,6 @@
 // Site title
 .site-logo-text {
     font-size: 2em;
-
     a {
         text-decoration: none;
     }
@@ -70,19 +72,17 @@
 /** --------------------------------------------------------------
  * Divs and containers
  */
-body {
-    background-color: @grayish;
-    color: white;
-}
+
 
 
 /** --------------------------------------------------------------
 * Links and text
 */
 a {
-    color: @orange;
+    // color: @grayish;
     font-size: 16px;
 }
+
 
 
 /** --------------------------------------------------------------
@@ -93,3 +93,28 @@ ul {
 list-style-type: none;
 
 }
+
+/** --------------------------------------------------------------
+ * Footer
+ */
+
+.footer {
+    border-top: 2px dotted green;
+}
+
+.footer a {
+    color: blue;
+}
+
+.route-typography .outer-wrap-main {
+    background-image: url(../img/horisontal-grid-24.png);
+    .font();
+    .typographyHeadings();
+    .typographyTextElements();
+    .typographyCodeElements();
+    .typographyListElements();
+    .typographyTableElements();
+    .typographyOtherElements();
+}
+
+
